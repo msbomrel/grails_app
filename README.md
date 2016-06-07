@@ -1,4 +1,4 @@
-# grails_app
+# grails_app:RepairyourGadgets
 Grails app projects on 5th semester<br>
 This is a web application made on grails.<br>
 Project members:<br>
