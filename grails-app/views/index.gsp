@@ -4,7 +4,7 @@
 		<meta name="layout" content="main"/>
 	</head>
 	<body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -44,15 +44,15 @@
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<img src="${resource(dir: 'images', file: 'image1.JPG')}" width="460" height="345">
+							<img src="${resource(dir: 'images', file: 'image1.JPG')}">
 						</div>
 
 						<div class="item">
-							<img src="${resource(dir: 'images', file: 'image2.JPG')}" width="460" height="345">
+							<img src="${resource(dir: 'images', file: 'image2.JPG')}">
 						</div>
 
 						<div class="item">
-							<img src="${resource(dir: 'images', file: 'image3.JPG')}" width="460" height="345">
+							<img src="${resource(dir: 'images', file: 'image3.JPG')}">
 						</div>
 
 					</div>
