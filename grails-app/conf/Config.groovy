@@ -135,16 +135,3 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/services':        ['ROLE_ADMIN'],
     '/technician/*':    ['ROLE_ADMIN']
 ]
-
-//grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
-//grails.plugins.springsecurity.interceptUrlMap = [
-//
-//        '/services':        ['ROLE_USER'],
-//        '/technician/*':    ['ROLE_ADMIN'],
-//        '/login':           ['permitAll'],
-//        '/login/**':        ['permitAll'],
-//        '/logout':          ['permitAll'],
-//        '/logout/**':       ['permitAll'],
-//        '/**':              ['ROLE_ADMIN'],
-//
-//]

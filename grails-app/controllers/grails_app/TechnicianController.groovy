@@ -1,5 +1,7 @@
 package grails_app
 
+
+
 class TechnicianController {
 
     def index() {
