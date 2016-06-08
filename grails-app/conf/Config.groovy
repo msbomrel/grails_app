@@ -122,6 +122,7 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'grails_app.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'grails_app.UserRole'
 grails.plugin.springsecurity.authority.className = 'grails_app.Role'
 grails.plugin.springsecurity.logout.postOnly = false
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                ['permitAll'],
 	'/index':           ['permitAll'],
@@ -130,6 +131,20 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/js/**':        ['permitAll'],
 	'/**/css/**':       ['permitAll'],
 	'/**/images/**':    ['permitAll'],
-	'/**/favicon.ico':  ['permitAll']
+	'/**/favicon.ico':  ['permitAll'],
+    '/services':        ['ROLE_ADMIN'],
+    '/technician/*':    ['ROLE_ADMIN']
 ]
 
+//grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+//grails.plugins.springsecurity.interceptUrlMap = [
+//
+//        '/services':        ['ROLE_USER'],
+//        '/technician/*':    ['ROLE_ADMIN'],
+//        '/login':           ['permitAll'],
+//        '/login/**':        ['permitAll'],
+//        '/logout':          ['permitAll'],
+//        '/logout/**':       ['permitAll'],
+//        '/**':              ['ROLE_ADMIN'],
+//
+//]
