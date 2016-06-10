@@ -10,7 +10,16 @@
 <head>
     <title></title>
 </head>
-
+%{--<script>--}%
+    %{--function askUserConfirmation(){--}%
+        %{--if (confirm("Are you sureeee?")){--}%
+            %{--console.log("here.....")--}%
+            %{--window.location.href="/delete";--}%
+            %{--window.location.href='<g:createLink controller="technician" action="delete"/>';--}%
+            %{--location.href="${createLink(controller: 'technician', action: 'delete')}"--}%
+        %{--}--}%
+    %{--}--}%
+%{--</script>--}%
 <body>
 <table>
     <tr>
@@ -30,6 +39,7 @@
             <td>${technician?.experience}</td>
             <td>${technician?.services?.type}</td>
             <td><g:link controller="technician" action="edit" params="[tech:technician.id]">EDIT</g:link></td>
+            <td><g:link controller="technician" action="delete" params="[tech:technician.id]" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</g:link></td>
         </tr>
     </g:each>
 </table>

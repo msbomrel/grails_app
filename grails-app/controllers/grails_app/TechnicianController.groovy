@@ -42,4 +42,15 @@ class TechnicianController {
         render(view:"showTechs", model: [tech: Technician.findAll()])
     }
 
+    def delete(){
+        Technician technician=Technician.get(params.tech)
+        def services=[]
+        services+=technician.services
+        services.each {it->
+            technician.removeFromServices(it)
+        }
+        technician.delete(flush: true)
+        render("Successfully Deleted!")
+    }
+
 }
