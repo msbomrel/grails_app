@@ -18,17 +18,24 @@
         <g:renderErrors bean="${tech}" as="list" />
     </div>
 </g:hasErrors>
-<g:form action="add" controller="technician">
-    Name: <input type="text" name="name" value="${tech?.name}"> <br>
+<g:form controller="technician">
+<input type="text" name="id" value="${tech?.id}" hidden="hidden">
+    Name*: <input type="text" name="name" value="${tech?.name}" required="true"> <br>
     Address: <input type="text" name="address" value="${tech?.address}"><br>
-    Contact: <input type="text" name="contact" value="${tech?.contact}"><br>
+    Contact*: <input type="text" name="contact" value="${tech?.contact}" required="true"><br>
     Email: <input type="text" name="email" value="${tech?.email}"><br>
     Experience: <g:textArea name="experience" rows="5" cols="30"/><br>
-    Service :
-    <g:select name="services" from="${ser}" multiple="true" optionKey="id" optionValue="type"/>
+    Service * :
+    <g:select name="services" from="${ser}" multiple="true" optionKey="id" optionValue="type" required="required"/>
     <br>
-    <input type="submit" id="tech-submit" value="Add Technician">
+    <g:if test="${operation=="Add"}">
+        <g:actionSubmit value="Add Technician" action="addOrUpdate"/>
+    </g:if>
+    <g:else>
+        <g:actionSubmit value="Edit Technician" action="addOrUpdate"/>
+    </g:else>
 </g:form>
+<g:link controller="technician" action="view">View All</g:link>
 
 </body>
 </html>

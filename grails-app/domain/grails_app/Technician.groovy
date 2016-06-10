@@ -10,10 +10,10 @@ class Technician {
 
 
     static constraints = {
-        name blank: false, nullable: false
-        contact size: 7..10
-        email email: true
+        contact size: 7..10, blank:false, nullable: false
+        email email: true, blank: true, nullable: true
         experience blank: true, nullable: true
         address blank: true, nullable: true
+        services blank:false, nullable: false
     }
 }
