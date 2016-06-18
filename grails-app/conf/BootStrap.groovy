@@ -14,6 +14,7 @@ class BootStrap {
         def userRole = new Role(authority: "ROLE_USER").save(flush: true)
         def adminRole = new Role(authority: "ROLE_ADMIN").save(flush: true)
 
+
         new UserRole(user: user, role: userRole).save(flush: true)
         new UserRole(user: admin, role: adminRole).save(flush: true)
 

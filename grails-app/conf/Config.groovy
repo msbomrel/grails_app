@@ -123,6 +123,14 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'grails_app.Use
 grails.plugin.springsecurity.authority.className = 'grails_app.Role'
 grails.plugin.springsecurity.logout.postOnly = false
 
+//grails.plugin.springsecurity.ui.register.postRegisterUrl = '/welcome'
+//
+//grails.plugin.springsecurity.ui.register.emailBody = '...'
+//grails.plugin.springsecurity.ui.register.emailFrom = '...'
+//grails.plugin.springsecurity.ui.register.emailSubject = '...'
+//grails.plugin.springsecurity.ui.register.defaultRoleNames = ['ROLE_USER'] // no roles
+
+grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                ['permitAll'],
 	'/index':           ['permitAll'],
@@ -133,5 +141,41 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':    ['permitAll'],
 	'/**/favicon.ico':  ['permitAll'],
     '/service/*':        ['ROLE_ADMIN'],
-    '/technician/*':    ['ROLE_ADMIN']
+    '/technician/*':    ['ROLE_ADMIN'],
+    '/services':        ['ROLE_ADMIN'],
+    '/technician/*':    ['ROLE_ADMIN'],
+        '/user/*':      ['ROLE_ADMIN']
 ]
+
+grails.plugin.springsecurity.interceptUrlMap = [
+        '/':                ['IS_AUTHENTICATED_FULLY'],
+        '/plugins/**':      ['permitAll'],
+        '/login':           ['permitAll'],
+        '/login/**':        ['permitAll'],
+        '/register/':       ['permitAll'],
+        '/register/**':     ['permitAll'],
+        '/logout':          ['permitAll'],
+        '/logout/**':       ['permitAll'],
+        '/user/**':         ['ROLE_ADMIN'],
+        '/role/**':         ['ROLE_ADMIN'],
+        '/registrationcode/**': ['ROLE_ADMIN'],
+        '/requestmap/**':       ['ROLE_ADMIN'],
+        '/securityinfo/**':     ['ROLE_ADMIN']
+
+]
+        grails.plugin.springsecurity.auth.loginFormUrl = '/login/'
+        grails.plugin.springsecurity.logout.afterLogoutUrl='/login/'
+        grails.plugin.springsecurity.ui.register.postRegisterUrl = '/register/registrationMessage'
+
+        grails {
+            mail {
+                host = "smtp.gmail.com"
+                port = 465
+                username = "begnas.api@gmail.com" //your email address
+                password = "begnas.api!@#"// password
+                props = ["mail.smtp.auth":"true",
+                         "mail.smtp.socketFactory.port":"465",
+                         "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                         "mail.smtp.socketFactory.fallback":"false"]
+            }
+        }
