@@ -10,6 +10,8 @@
 <head>
     <title></title>
 </head>
+<g:javascript library="jquery"/>
+
 %{--<script>--}%
     %{--function askUserConfirmation(){--}%
         %{--if (confirm("Are you sureeee?")){--}%
@@ -21,6 +23,10 @@
     %{--}--}%
 %{--</script>--}%
 <body>
+<g:form action="searchSpecificTech" controller="technician">
+    Search Technician for: <g:select name="specificTech" id="specificTech" from="${services}" optionKey="id" optionValue="type"/>
+    <g:submitButton name="specificTech" value="Search"/>
+</g:form>
 <table>
     <tr>
         <th>Name</th>

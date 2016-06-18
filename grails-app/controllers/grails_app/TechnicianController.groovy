@@ -27,7 +27,7 @@ class TechnicianController {
         }
         if (technician.validate()){
             technician.save(flush: true)
-            render(view:"showTechs", model: [tech: technician.findAll()])
+            render(view:"showTechs", model: [tech: technician.findAll(), services: Service.findAll()])
         }else{
             render (view: "index", model:[tech:technician, ser: Service.findAll(), operation: "Add"])
         }
@@ -39,7 +39,7 @@ class TechnicianController {
     }
 
     def view(){
-        render(view:"showTechs", model: [tech: Technician.findAll()])
+        render(view:"showTechs", model: [tech: Technician.findAll(), services: Service.findAll()])
     }
 
     def delete(){
@@ -51,6 +51,18 @@ class TechnicianController {
         }
         technician.delete(flush: true)
         render("Successfully Deleted!")
+    }
+
+    def searchSpecificTech(){
+        def technician=[]
+        def req=[]
+        technician=Technician.findAll()
+        technician.each {it->
+            if (it.services.contains(Service.findById(params.specificTech))){
+                req+=it
+            }
+        }
+        render(view:"showTechs", model: [tech:req , services: Service.findAll()])
     }
 
 }
