@@ -13,7 +13,7 @@
 
 <body>
 <h3>Service</h3>
-<g:form action="add" controller="Service">
+<g:form action="add" controller="service">
     Type: <input type="text" name="type" id="service-type">
     <input type="submit" value="Add Service" id="service-submit">
 </g:form>

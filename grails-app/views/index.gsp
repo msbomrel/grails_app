@@ -30,7 +30,7 @@
 	</nav>
 
 	<div class="container-fluid">
-		<div class="jumbotron">
+		%{--<div class="jumbotron">
 			<div class="container">
 				<br>
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -67,7 +67,7 @@
 						<span class="sr-only">Next</span>
 					</a>
 				</div>
-			</div>
+			</div>--}%
 
 			<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>

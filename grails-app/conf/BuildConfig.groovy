@@ -78,5 +78,7 @@ grails.project.dependency.resolution = {
         compile "org.grails.plugins:spring-security-ui:1.0-RC2"
         //bootstrap plugin
         runtime ':twitter-bootstrap:3.3.5'
+
+        compile "org.grails.plugins:calendar:1.2.1"
     }
 }

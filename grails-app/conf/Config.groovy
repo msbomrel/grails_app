@@ -160,7 +160,12 @@ grails.plugin.springsecurity.interceptUrlMap = [
         '/role/**':         ['ROLE_ADMIN'],
         '/registrationcode/**': ['ROLE_ADMIN'],
         '/requestmap/**':       ['ROLE_ADMIN'],
-        '/securityinfo/**':     ['ROLE_ADMIN']
+        '/securityinfo/**':     ['ROLE_ADMIN'],
+        '/enquiry/**':          ['ROLE_ADMIN'],
+        '/service/**':          ['ROLE_ADMIN'],
+        '/technician/**':          ['ROLE_ADMIN']
+
+
 
 ]
         grails.plugin.springsecurity.auth.loginFormUrl = '/login/'
