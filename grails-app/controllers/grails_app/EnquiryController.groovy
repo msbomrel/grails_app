@@ -19,7 +19,7 @@ class EnquiryController {
         enquiry.status="New"
         enquiry.service=service
         enquiry.serviceReqDate=params.serviceReqDate
-
+        enquiry.user=User.findById((long)request.getSession().getAttribute("userId"))
         enquiry.save(flush:true)
         render ("Successfully Added")
     }
