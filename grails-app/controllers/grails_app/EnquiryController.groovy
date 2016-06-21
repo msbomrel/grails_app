@@ -23,4 +23,7 @@ class EnquiryController {
         enquiry.save(flush:true)
         render ("Successfully Added")
     }
+    def renderFinalView = {
+        render(view:"index");
+    }
 }

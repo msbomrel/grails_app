@@ -140,13 +140,13 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/css/**':       ['permitAll'],
 	'/**/images/**':    ['permitAll'],
 	'/**/favicon.ico':  ['permitAll'],
-    '/service/*':        ['ROLE_ADMIN'],
-    '/technician/*':    ['ROLE_ADMIN'],
-    '/services':        ['ROLE_ADMIN'],
-    '/technician/*':    ['ROLE_ADMIN'],
-        '/user/*':      ['ROLE_ADMIN']
+    '/service/**':        ['permitAll'],
+    '/technician/**':    ['permitAll'],
+        '/user/**':      ['permitAll'],
+    '/enquiry/**':          ['permitAll'],
 ]
 
+grails.plugin.springsecurity.fii.rejectPublicInvocations = false
 grails.plugin.springsecurity.interceptUrlMap = [
         '/':                ['IS_AUTHENTICATED_FULLY'],
         '/plugins/**':      ['permitAll'],
@@ -156,14 +156,14 @@ grails.plugin.springsecurity.interceptUrlMap = [
         '/register/**':     ['permitAll'],
         '/logout':          ['permitAll'],
         '/logout/**':       ['permitAll'],
-        '/user/**':         ['ROLE_ADMIN'],
+        '/user/**':         ['permitAll'],
         '/role/**':         ['ROLE_ADMIN'],
         '/registrationcode/**': ['ROLE_ADMIN'],
         '/requestmap/**':       ['ROLE_ADMIN'],
         '/securityinfo/**':     ['ROLE_ADMIN'],
-        '/enquiry/**':          ['ROLE_ADMIN'],
-        '/service/**':          ['ROLE_ADMIN'],
-        '/technician/**':          ['ROLE_ADMIN']
+        '/enquiry/**':          ['permitAll'],
+        '/service/**':          ['permitAll'],
+        '/technician/**':          ['permitAll']
 
 
 
