@@ -10,9 +10,9 @@ class UserController {
         grails_app.User u=grails_app.User.findByUsername(user.getUsername())
         request.getSession().setAttribute("userId", u.id);
         if (user.authorities.any { it.authority == "ROLE_ADMIN" }){
-            render ("test")
+            redirect(controller: 'admin', action: 'index')
         }else {
-            render(view: "index")
+            redirect(controller: 'user', action: 'index')
         }
     }
 
