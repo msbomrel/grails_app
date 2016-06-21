@@ -2,7 +2,7 @@ package grails_app
 
 class Enquiry {
     Service service
-    User user
+   // User user
     String status
     String priority
     String details

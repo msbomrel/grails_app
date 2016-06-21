@@ -17,7 +17,7 @@ class UserController {
     }
 
     def save(){
-        User user = new User(params)
+        grails_app.User user = new User(params)
         if(user.save() == true){
             render "saved user"
         }
